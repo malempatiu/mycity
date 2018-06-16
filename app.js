@@ -16,13 +16,14 @@ const User                 = require('./models/user'),
       authenticationRoutes = require('./routes/index');
 
 //===================== APP Config ============================================
-mongoose.connect('mongodb://localhost/my_city_attractions');      
+//mongoose.connect('mongodb://localhost/my_city_attractions');
+mongoose.connect('mongodb://mycity:4455ece7119@ds261470.mlab.com:61470/my_city_attractions'); 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + '/public'));
 app.use(methodOverride('_method'));
 app.use(flash());
-app.locals.moment = require('moment')
+app.locals.moment = require('moment');
 
 //============= Passport Config ==========
 app.use(session({
