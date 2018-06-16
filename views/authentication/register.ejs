@@ -1,0 +1,29 @@
+<% include ../partials/header %>
+
+     <section>
+         <div class="container signup-attraction-form-container">
+             <div class="row">
+                 <div class="col-md-5 signup-attraction-form-head text-center">
+                     <i class="fas fa-user-plus fa-5x"></i>
+                     <h2 class="signup-attraction-form-head-text">Create your account</h2>
+                 </div>
+                 <div class="col-md-7 signup-attraction-form-body">
+                     <form action="/register" method="POST">
+                         <div class="form-group">
+                             <label for="user">UserName</label>
+                             <input class="form-control" type="text" id="user" name="username">
+                         </div>
+                         <div class="form-group">
+                             <label for="security">Password</label>
+                             <input class="form-control" type="password" id="security" name="password">
+                         </div>
+                         <div class="form-group">
+                             <button class="form-control btn btn-primary" type="submit">Create Account</button>
+                         </div>
+                     </form>
+                 </div>
+             </div>
+         </div>
+     </section>
+     
+<% include ../partials/footer %>

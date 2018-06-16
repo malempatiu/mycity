@@ -1,0 +1,29 @@
+<% include ../partials/header %>
+
+     <section>
+         <div class="container login-attraction-form-container">
+             <div class="row">
+                 <div class="col-md-5 login-attraction-form-head text-center">
+                     <i class="fas fa-sign-in-alt fa-5x"></i>
+                     <h2 class="login-attraction-form-head-text">Log in</h2>
+                 </div>
+                 <div class="col-md-7 login-attraction-form-body">
+                     <form action="/login" method="POST">
+                         <div class="form-group">
+                             <label for="user"><i class="fas fa-user"></i> UserName</label>
+                             <input class="form-control" type="text" id="user" name="username">
+                         </div>
+                         <div class="form-group">
+                             <label for="security"><i class="fas fa-key"></i> Password</label>
+                             <input class="form-control" type="password" id="security" name="password">
+                         </div>
+                         <div class="form-group">
+                             <button class="form-control btn btn-primary" type="submit">Log In</button>
+                         </div>
+                     </form>
+                 </div>
+             </div>
+         </div>
+     </section>
+     
+<% include ../partials/footer %>

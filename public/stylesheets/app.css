@@ -1,0 +1,336 @@
+body{
+     background-color: #2d2d53;
+     font-family: 'Roboto Slab', serif;
+}
+
+/* NAVBAR STYLE */
+.navbar{
+      background-color: #424264;
+}
+.navbar-brand{
+      color: #fff;
+      font-weight: bold;
+      font-size: xx-large;
+}
+
+.navbar-brand:hover{
+      color: #f8b71d;
+}
+
+.fa-fort-awesome-alt{
+      color: #fff;
+}
+
+.nav-item{
+      color: #fff;
+      margin-left: 1.5rem;
+      padding: 8px 16px;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: bold;
+      text-decoration: none;
+      letter-spacing: 0.2px;
+      cursor: pointer;
+      text-align: center;
+      border-radius: 4px;
+}
+
+/* Flash message */
+.flash-message{
+     margin-top: 20px;
+}
+
+/* Index Page Style */
+.jumbotron{
+      margin: 20px 0px;
+      color: #fff;
+      background-color: #565675;
+}
+
+.lead{
+     color: #C7CACD;
+}
+
+.btn-add{
+       border: 3px solid;
+}
+.index-image-grid{
+       margin-bottom: 20px;
+}
+
+.index-image-thumbnail{
+       padding: 0;
+       border: 0;
+       border-radius: 0px;
+}
+
+.index-image-title, .index-image-info-button{
+       margin: 10px auto; 
+}
+
+/* Create Attraction Form Style */
+.new-attraction-form-container{
+      width: 80%;
+      margin-top: 100px;
+      margin-bottom: 100px;
+}
+
+.new-attraction-form-head{
+      background-color: #818197;
+      padding-top: 20px;
+}
+
+.new-attraction-form-head-text {
+       color: #fb2;
+       font-weight: bold;
+}
+
+#form-logo{
+      padding-bottom: 20px;
+}
+
+.new-attraction-form-body{
+      background-color: #565675;
+      color: #fff;
+      padding-top: 20px;
+}
+
+/* Show Page Style */
+.show-attraction-name{
+     color: #f8b71d;
+     font-weight: bold;
+}
+
+.show-attraction-col-12{
+     background-color: #565675;
+     padding: 0;
+     border: 0;
+     border-radius: 8px;
+     color: #fff;
+}
+
+.show-attraction-img{
+     padding: 0;
+     border: 0;
+     border-radius: 0;
+     width: 100%;
+}
+
+.show-attraction-description{
+     margin: 10px 10px;
+}
+
+.show-attraction-author{
+     margin-left: 10px;
+     margin-right: 10px;
+     padding-bottom: 15px;
+     color: #1ac;
+}
+
+.card{
+     background-color: #858c96;
+     border: 0;
+     border-radius: 8px;
+     margin-top: 20px;
+}
+
+.card-body{
+     padding: 10px;
+}
+
+.comment-btn{
+     margin-bottom: 20px;
+}
+
+.btn-sm{
+     margin-left: 15px;
+     margin-bottom: 15px;
+}
+
+#delete-form{
+     display: inline;
+}
+
+.commented-author{
+     margin-bottom: 0;
+     color: #ea5252;
+}
+
+.commented-comment{
+     margin-bottom: 0;
+}
+
+#comment-time{
+     color: #d3d3d3;
+     padding-bottom: 10px;
+}
+
+.location-container{
+     margin-top: 30px;
+     margin-bottom: 30px;
+     background-color: #fff;
+}
+.location-text{
+     color: #f8b71d;
+     font-weight: bold;
+     padding-top: 10px;
+}
+
+#map {
+    height: 500px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.maps-text{
+     color: #000;
+}
+
+.temperature-img{
+     border-color: #fff;
+     border-radius: 20px;
+     padding: 0;
+     width: 100px;
+     height: 100px;
+}
+
+.temperature-value{
+     font-size: 50px;
+     margin-bottom: 0;
+}
+
+.temperature-text{
+     color: grey;
+}
+
+.humidity, .pressure{
+     margin-bottom: 0;
+}
+
+.humidity-img, .pressure-img{
+     width: 50px;
+     height: 50px;
+     border-radius: 10px;
+}
+
+.location-container .col-md-6 ul .item-2{
+     margin-bottom: 15px;
+}
+
+/* Comments Form Style */
+.comment-attraction-form-container{
+      width: 80%;
+      margin-top: 100px;
+      margin-bottom: 100px;
+}
+
+.comment-attraction-form-head{
+      background-color: #818197;
+      padding-top: 20px;
+}
+
+.comment-attraction-form-head-text {
+       color: #fb2;
+       font-weight: bold;
+}
+
+.fa-comment-dots{
+      color: #fff;
+      padding-bottom: 20px;
+}
+
+.comment-attraction-form-body{
+      background-color: #565675;
+      color: #fff;
+      padding-top: 20px;
+}
+
+/* User register form style */
+.signup-attraction-form-container{
+      width: 80%;
+      margin-top: 100px;
+      margin-bottom: 100px;
+}
+
+.signup-attraction-form-head{
+      background-color: #818197;
+      padding-top: 20px;
+}
+
+.signup-attraction-form-head-text {
+       color: #fb2;
+       font-weight: bold;
+}
+
+.fa-user-plus{
+      color: #fff;
+      padding-bottom: 20px;
+}
+
+.signup-attraction-form-body{
+      background-color: #565675;
+      color: #fff;
+      padding-top: 20px;
+}
+
+/* User Login form style */
+.login-attraction-form-container{
+      width: 80%;
+      margin-top: 100px;
+      margin-bottom: 100px;
+}
+
+.login-attraction-form-head{
+      background-color: #818197;
+      padding-top: 20px;
+}
+
+.login-attraction-form-head-text {
+       color: #fb2;
+       font-weight: bold;
+}
+
+.fa-sign-in-alt{
+      color: #fff;
+      padding-bottom: 20px;
+}
+
+.login-attraction-form-body{
+      background-color: #565675;
+      color: #fff;
+      padding-top: 20px;
+}
+
+/* Edit attraction form style */
+.edit-attraction-form-container{
+      width: 80%;
+      margin-top: 100px;
+      margin-bottom: 100px;
+}
+
+.edit-attraction-form-head{
+      background-color: #818197;
+      padding-top: 20px;
+}
+
+.edit-attraction-form-head-text {
+       color: #fb2;
+       font-weight: bold;
+}
+
+.fa-edit{
+      color: #fff;
+      padding-bottom: 20px;
+}
+
+.edit-attraction-form-body{
+      background-color: #565675;
+      color: #fff;
+      padding-top: 20px;
+}
+
+
+/* Google Maps 
+ */
+

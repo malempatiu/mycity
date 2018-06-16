@@ -1,0 +1,23 @@
+<% include ../partials/header %>
+     <section>
+         <div class="container comment-attraction-form-container">
+             <div class="row">
+                 <div class="col-md-5 comment-attraction-form-head text-center">
+                     <i class="fas fa-comment-dots fa-5x"></i>
+                     <h2 class="comment-attraction-form-head-text">Comment <%=attractionToComment.attractionName%></h2>
+                 </div>
+                 <div class="col-md-7 comment-attraction-form-body">
+                     <form action="/attractions/<%=attractionToComment._id%>/comments" method="POST">
+                         <div class="form-group">
+                             <label for="attractionComment">Your Comment</label>
+                             <input class="form-control" type="text" id="attractionComment" name="attractionComment" placeholder="Enter comment">
+                         </div>
+                         <div class="form-group">
+                             <button class="form-control btn btn-primary" type="submit">Create Comment</button>
+                         </div>
+                     </form>
+                 </div>
+             </div>
+         </div>
+     </section>
+<% include ../partials/footer %>

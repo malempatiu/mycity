@@ -1,0 +1,109 @@
+<% include ../partials/header %>
+
+     <section>
+         <!-- City Attraction Info -->
+         <div class="container">
+             <h2 class="text-center show-attraction-name"><%= showSpecificAttraction.attractionName %></h2>
+             <div class="row">
+                 <div class="col-md-12">
+                     <div class="img-thumbnail show-attraction-col-12">
+                         <img class="img-thumbnail show-attraction-img" src="<%= showSpecificAttraction.attractionImage %>">
+                         <p class="text-justify show-attraction-description"><%= showSpecificAttraction.attractionDescription %></p>
+                         <p class="font-italic show-attraction-author">Created By: <%= showSpecificAttraction.attractionAuthor.username %>, <%= moment(showSpecificAttraction.attractionCreatedAt).fromNow()%></p>
+                         <% if(currentUser && showSpecificAttraction.attractionAuthor.id.equals(currentUser._id)) { %>
+                             <a class="btn btn-warning btn-sm" href="/attractions/<%= showSpecificAttraction._id %>/edit">Edit</a>
+                             <form id="delete-form" action="/attractions/<%= showSpecificAttraction._id %>?_method=DELETE" method="POST">
+                                 <button class="btn btn-danger btn-sm">Delete</button>
+                             </form>
+                         <% }; %>
+                     </div>
+                     <div class="card">
+                         <div class="card-body">
+                             <div class="text-right">
+                                 <a class="btn btn-success comment-btn" href="/attractions/<%= showSpecificAttraction._id%>/comments/new">Leave a Comment</a>   
+                             </div>
+                             <% showSpecificAttraction.attractionComments.forEach( (eachComment) => { %>
+                                 <div class="row">
+                                     <div class="col-md-12">
+                                         <p class="commented-author"><i class="fas fa-user-circle"></i> <%=eachComment.author.username%></p>
+                                         <p class="commented-comment"><%=eachComment.comment%></p>
+                                         <p id="comment-time"><%= moment(eachComment.commentCreatedAt).fromNow()%></p>
+                                     </div>
+                                 </div>
+                             <% }); %> 
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>     
+     
+     <section>
+         <!-- City Current Location -->
+         <div class="container location-container">
+             <h2 class="text-center location-text"><%= showSpecificAttraction.attractionName %> Location and Weather</h2>
+             <div class="row">
+                 <div class="col-md-12">
+                     <div id="map"></div>    
+                 </div>
+             </div>
+              <div class="row">
+                 <div class="col-md-6">
+                     <div class="row temp-row">
+                         <div class="col-md-6 text-center">
+                             <img class="img-thumbnail temperature-img" src="<%= weatherData.icon %>">        
+                         </div>
+                         <div class="col-md-6">
+                             <p class="text-center temperature-value"><%= weatherData.temperature%></p>
+                             <p class="text-center temperature-text"><%= weatherData.summary.slice(1, weatherData.summary.length-1)%></p>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="col-md-6">
+                     <ul class="list-group">
+                         <li class="list-group-item">
+                             <img class="humidity-img" src="http://res.cloudinary.com/cityattractionimages/image/upload/v1529049071/humi.png" alt="Card image cap">
+                             <p class="text-left humidity">Humidity: <%= weatherData.humidity%></p>
+                         </li>
+                         <li class="list-group-item item-2">
+                             <img class="pressure-img" src="http://res.cloudinary.com/cityattractionimages/image/upload/v1528915370/pressure.png" alt="Card image cap">
+                             <p class="text-left pressure">Pressure: <%= weatherData.pressure%></p> 
+                         </li>
+                     </ul>
+                 </div>
+             </div>
+         </div>
+     </section>
+         
+     <script>
+         function initMap() {
+             let lat = <%= weatherData.lat %>;
+             let lng = <%= weatherData.lng %>;
+             const center = {lat: lat, lng: lng };
+             const map = new google.maps.Map(document.getElementById('map'), {
+                 zoom: 8,
+                 center: center,
+                 scrollwheel: false
+                });
+             let contentString = `
+             <div class="text-center maps-text">
+                 <strong><%= showSpecificAttraction.attractionName %><br />
+                 <%= weatherData.location %></strong>
+             </div>
+             `
+             const infowindow = new google.maps.InfoWindow({
+                 content: contentString
+                });
+             const marker = new google.maps.Marker({
+                 position: center,
+                 map: map
+                });
+             marker.addListener('click', function() {
+                 infowindow.open(map, marker);
+                 
+                });
+         }
+     </script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCu5sPTDFClxVs3SAuHnaMoQ5RopQP-KKY&callback=initMap"></script>
+     
+<% include ../partials/footer %>

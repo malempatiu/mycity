@@ -1,0 +1,30 @@
+<% include ../partials/header %>
+      <section>
+          <!-- Bootstrap jumbotron for showcasing hero style heading -->
+           <div class="container jumbo-container">
+                <div class="jumbotron text-center">
+                     <i class="fab fa-fort-awesome-alt fa-5x"></i>
+                     <h1>Welcome to My City</h1>
+                     <p class="lead">View all famous attractions of Hyderabad, Telangana, India</p>
+                     <a class="btn btn-outline-info btn-add" href="/attractions/new">Add New Attraction</a>
+                </div>
+           </div>
+          <!-- City attractions image gallery grid -->
+          <div class="container">
+             <div class="row">
+                 <% attractionsDbData.forEach( (eachAttractionDbData) => { %>
+                     <div class="col-md-3 col-sm-6 index-image-grid">
+                         <div class="img-thumbnail index-image-thumbnail">
+                             <img class="img-thumbnail index-image-thumbnail" src="<%= eachAttractionDbData.attractionImage %>">
+                             <div class="container text-center">
+                                 <p class="text-uppercase font-weight-bold index-image-title"><%= eachAttractionDbData.attractionName %></p>
+                                 <a class="btn btn-primary index-image-info-button" href="/attractions/<%= eachAttractionDbData._id%>">More Info <i class="fas fa-chevron-right"></i></a>
+                             </div>
+                         </div>
+                     </div>
+                 <% }); %>
+             </div>    
+          </div>
+          
+      </section>
+<% include ../partials/footer %>
